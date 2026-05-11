@@ -201,7 +201,6 @@ function gdCheckHash(){
   gdTokenExp=Date.now()+(parseInt(params.expires_in)||3600)*1000;
   localStorage.setItem('gd_token',gdToken);
   localStorage.setItem('gd_token_exp',String(gdTokenExp));
-  localStorage.removeItem('gd_migrated_from_fs_v1'); // re-run migration on fresh sign-in
   history.replaceState(null,'',window.location.pathname);
   document.getElementById('loginBtn').style.display='none';
   return true;
@@ -229,41 +228,6 @@ function gdGetToken(){
   return Promise.reject(new Error('no_token'));
 }
 
-// ── One-time Firestore → GDrive migration ────────────────────────────────
-async function migrateFromFirestore(){
-  var MKEY='gd_migrated_from_fs_v1';
-  if(localStorage.getItem(MKEY))return;
-  var FS='https://firestore.googleapis.com/v1/projects/daily-planner-99f56/databases/(default)/documents/planner';
-  var FK='AIzaSyB_d3rqPgKbWfui8lMWeJLxRoK0nP245kQ';
-  var today=new Date();today.setHours(0,0,0,0);
-  for(var i=0;i<=7;i++){
-    var d=new Date(today);d.setDate(d.getDate()-i);
-    var dateStr=dk(d);
-    try{
-      var r=await fetch(FS+'/'+dateStr+'?key='+FK);
-      if(!r.ok)continue;
-      var j=await r.json();
-      var f=j.fields||{};
-      var data={
-        tasks_work:(f.tasks_work&&f.tasks_work.stringValue)||'[]',
-        tasks_personal:(f.tasks_personal&&f.tasks_personal.stringValue)||'[]',
-        tasks_house:(f.tasks_house&&f.tasks_house.stringValue)||'[]',
-        notes:(f.notes&&f.notes.stringValue)||'',
-        gcal_events:'[]',
-        updated_at:new Date().toISOString(),
-        updated_by:'mobile_migration'
-      };
-      var hasAny=['work','personal','house'].some(function(t){
-        try{return JSON.parse(data['tasks_'+t]).length>0;}catch(e){return false;}
-      });
-      if(hasAny){
-        var existingId=await gdSearch(dateStr);
-        await gdWrite(dateStr,data,existingId);
-      }
-    }catch(e){}
-  }
-  localStorage.setItem(MKEY,'1');
-}
 
 // ── Drive API helpers ─────────────────────────────────────────────────────
 async function gdSearch(date){
@@ -482,14 +446,5 @@ function init(){
   renderDateLabel();renderAll();connStatus(false);
   if(gdCheckHash()){
     // Returned from OAuth redirect — migrate then start polling
-    migrateFromFirestore().then(function(){startPoll();});
-  } else if(gdLoadSession()){
     startPoll();
-  } else {
-    // No token — show sign-in button, render empty
-  }
-}
-init();
-</script>
-</body>
-</html>
+  } else i
