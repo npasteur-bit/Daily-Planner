@@ -273,8 +273,6 @@ async function gdWrite(date,data,existingId){
 async function gdSaveToday(){
   if(!gdHasToken())return;
   var dateStr=dk(cur);
-  var today=new Date();today.setHours(0,0,0,0);
-  var isToday=(cur.getTime()===today.getTime());
   var data={
     tasks_work:D.tasks_work||'[]',
     tasks_personal:D.tasks_personal||'[]',
@@ -284,9 +282,10 @@ async function gdSaveToday(){
     updated_at:new Date().toISOString(),
     updated_by:'mobile'
   };
-  var existingId=(isToday&&_todayFileId)?_todayFileId:(await gdSearch(dateStr));
+  // Always search for the latest file so we patch whatever the desktop most recently wrote
+  var existingId=await gdSearch(dateStr);
   var newId=await gdWrite(dateStr,data,existingId);
-  if(isToday){_todayFileId=newId||existingId||_todayFileId;}
+  if(newId)_todayFileId=newId;
 }
 
 // ── Sync / load ───────────────────────────────────────────────────────────
