@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Planner">
+<meta name="theme-color" content="#000000">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Daily Planner</title>
+<style>
+:root{--blue:#4285f4;--green:#0f9d58;--orange:#e65100;--gold:#f5a623;--bg:#f0f2f5;--text:#1a1a2e;--muted:#888;--border:#e0e0e0;--tab-h:60px;--header-h:58px;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;}
+.app{display:flex;flex-direction:column;height:100%;}
+.header{background:white;padding:0 16px;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,.1);z-index:10;}
+.date-nav{display:flex;align-items:center;gap:10px;}
+.nav-btn{background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer;padding:6px;line-height:1;}
+.date-label{font-size:15px;font-weight:700;color:var(--text);min-width:160px;text-align:center;}
+.today-btn{background:var(--blue);color:white;border:none;border-radius:8px;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer;}
+.content{flex:1;overflow-y:auto;overflow-x:hidden;padding:12px 14px calc(var(--tab-h) + 12px);-webkit-overflow-scrolling:touch;}
+.tabbar{position:fixed;bottom:0;left:0;right:0;height:var(--tab-h);background:white;border-top:1px solid var(--border);display:flex;z-index:20;padding-bottom:env(safe-area-inset-bottom,0);}
+.tab-btn{flex:1;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted);}
+.tab-btn.active{color:var(--blue);}
+.tab-icon{font-size:20px;line-height:1;}
+.tab-label{font-size:10px;font-weight:600;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+.card{background:white;border-radius:14px;padding:14px 15px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.07);}
+.card-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:10px;}
+.event-item{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border-radius:10px;background:#f8f9fa;border-left:3px solid #ccc;margin-bottom:6px;}
+.event-time{font-size:12px;color:var(--muted);min-width:72px;font-weight:500;padding-top:1px;}
+.event-body{flex:1;min-width:0;}
+.event-title{font-weight:600;font-size:14px;line-height:1.3;}
+.event-sub{font-size:11px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.no-events{color:var(--muted);font-style:italic;font-size:13px;text-align:center;padding:8px 0;}
+.sync-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.sync-label{font-size:11px;color:var(--muted);}
+.sync-btn{background:none;border:1px solid var(--border);border-radius:6px;padding:3px 8px;font-size:15px;color:var(--muted);cursor:pointer;}
+.conn-dot{width:7px;height:7px;border-radius:50%;background:#ccc;display:inline-block;margin-right:4px;}
+.conn-dot.online{background:#4caf50;}
+.conn-dot.offline{background:#f44336;}
+.section-head{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 0 8px;}
+.task-item{display:flex;align-items:flex-start;gap:10px;padding:9px 10px;border-radius:10px;background:#f8f9fa;margin-bottom:6px;}
+.task-item.done .task-label{text-decoration:line-through;color:#bbb;}
+.task-check{width:18px;height:18px;border-radius:5px;border:2px solid #ccc;flex-shrink:0;cursor:pointer;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.task-check.checked{background:var(--blue);border-color:var(--blue);}
+.task-check.checked::after{content:'v';color:white;font-size:11px;font-weight:900;}
+.task-label{flex:1;font-size:14px;line-height:1.4;word-break:break-word;}
+.task-del{background:none;border:none;color:#d0d0d0;font-size:19px;cursor:pointer;padding:0 2px;line-height:1;flex-shrink:0;}
+.task-del:active{color:#f44336;}
+.btn-star{background:none;border:none;font-size:16px;color:#ccc;cursor:pointer;padding:0 2px;flex-shrink:0;transition:color .15s;}
+.btn-star.starred{color:var(--gold);}
+.subtask-list{margin-left:28px;margin-top:5px;display:flex;flex-direction:column;gap:4px;}
+.subtask-item{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:#eef2ff;}
+.subtask-item.done .task-label{text-decoration:line-through;color:#bbb;}
+.sub-check{width:15px;height:15px;border-radius:4px;border:1.5px solid #aaa;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.sub-check.checked{background:var(--blue);border-color:var(--blue);}
+.sub-check.checked::after{content:'v';color:white;font-size:9px;font-weight:900;}
+.add-row{display:flex;gap:8px;margin-top:8px;}
+.add-input{flex:1;border:1px solid var(--border);border-radius:10px;padding:8px 12px;font-size:14px;outline:none;font-family:inherit;background:white;min-width:0;-webkit-appearance:none;}
+.add-input:focus{border-color:var(--blue);}
+.add-btn{background:var(--blue);color:white;border:none;border-radius:10px;padding:8px 14px;font-size:18px;cursor:pointer;flex-shrink:0;}
+.add-sub-btn{background:none;border:none;cursor:pointer;color:#ccc;font-size:16px;padding:0 3px;flex-shrink:0;}
+.subtask-add-row{margin-left:28px;margin-top:5px;display:flex;gap:6px;}
+.subtask-add-row input{flex:1;border:1px dashed #ccc;border-radius:8px;padding:5px 10px;font-size:13px;outline:none;font-family:inherit;background:#fafafa;-webkit-appearance:none;}
+.sub-add-btn{background:var(--blue);color:white;border:none;border-radius:8px;padding:5px 10px;font-size:15px;cursor:pointer;}
+.prio-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;background:#fffbf0;border-left:3px solid var(--gold);margin-bottom:6px;}
+.prio-item.done .task-label{text-decoration:line-through;color:#bbb;}
+.prio-badge{font-size:10px;font-weight:700;text-transform:uppercase;padding:2px 6px;border-radius:4px;color:white;flex-shrink:0;}
+.prio-badge.work{background:var(--blue);}
+.prio-badge.personal{background:var(--green);}
+.prio-badge.house{background:var(--orange);}
+.prio-empty{color:#bbb;font-size:13px;font-style:italic;padding:4px 0;}
+.notes-area{width:100%;border:1px solid var(--border);border-radius:10px;padding:10px 12px;font-size:14px;font-family:inherit;min-height:140px;outline:none;resize:none;line-height:1.6;-webkit-appearance:none;}
+.notes-area:focus{border-color:var(--blue);}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <div class="date-nav">
+      <button class="nav-btn" onclick="changeDate(-1)">&#8249;</button>
+      <div class="date-label" id="dateLabel"></div>
+      <button class="nav-btn" onclick="changeDate(1)">&#8250;</button>
+    </div>
+    <button class="today-btn" onclick="goToday()">Today</button>
+    <button id="loginBtn" class="today-btn" style="background:#e65100;margin-left:4px" onclick="gdSignIn()">Sign in</button>
+  </div>
+  <div class="content">
+    <div class="tab-panel active" id="tab-schedule">
+      <div class="card">
+        <div class="sync-row">
+          <div class="card-title" style="margin-bottom:0">Today's Schedule</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="conn-dot" id="connDot"></span>
+            <span class="sync-label" id="syncLabel"></span>
+            <button class="sync-btn" onclick="manualSync()">&#8635;</button>
+          </div>
+        </div>
+        <div id="eventList"></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-tasks">
+      <div class="card" id="priorityCard" style="display:none">
+        <div class="card-title">&#9733; Priorities</div>
+        <div id="priorityList"></div>
+      </div>
+      <div class="section-head">&#128188; Work</div>
+      <div id="workList"></div>
+      <div class="add-row">
+        <input class="add-input" id="workIn" type="text" placeholder="Add work task..." onkeydown="if(event.key==='Enter')addTask('work')">
+        <button class="add-btn" onclick="addTask('work')">+</button>
+      </div>
+      <div class="section-head" style="margin-top:18px">&#128100; Personal</div>
+      <div id="personalList"></div>
+      <div class="add-row">
+        <input class="add-input" id="personalIn" type="text" placeholder="Add personal task..." onkeydown="if(event.key==='Enter')addTask('personal')">
+        <button class="add-btn" onclick="addTask('personal')">+</button>
+      </div>
+      <div class="section-head" style="margin-top:18px">&#127968; House</div>
+      <div id="houseList"></div>
+      <div class="add-row">
+        <input class="add-input" id="houseIn" type="text" placeholder="Add house task..." onkeydown="if(event.key==='Enter')addTask('house')">
+        <button class="add-btn" onclick="addTask('house')">+</button>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-notes">
+      <div class="card">
+        <div class="card-title">&#128221; Notes</div>
+        <textarea class="notes-area" id="notesArea" placeholder="Notes, follow-ups, tomorrow's plan..." oninput="saveNotes()"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <button class="tab-btn active" id="tabBtn-schedule" onclick="switchTab('schedule')">
+      <span class="tab-icon">&#128197;</span><span class="tab-label">Schedule</span>
+    </button>
+    <button class="tab-btn" id="tabBtn-tasks" onclick="switchTab('tasks')">
+      <span class="tab-icon">&#9989;</span><span class="tab-label">Tasks</span>
+    </button>
+    <button class="tab-btn" id="tabBtn-notes" onclick="switchTab('notes')">
+      <span class="tab-icon">&#128221;</span><span class="tab-label">Notes</span>
+    </button>
+  </div>
+</div>
+<script>
+// ── Google Drive OAuth ────────────────────────────────────────────────────
+var CLIENT_ID = '735273528580-fvomj8b6j4k1pq06464te1qpmeqo9e59.apps.googleusercontent.com';
+var DRIVE_API  = 'https://www.googleapis.com/drive/v3/files';
+var UPLOAD_API = 'https://www.googleapis.com/upload/drive/v3/files';
+
+var gdToken    = null;
+var gdTokenExp = 0;
+
+var BANNER=[
+  {title:"Monthly HOPE Education AM Session",time:"9:00 AM",dateKey:"2026-05-13"},
+  {title:"SRM Annual Appreciation and Awards Luncheon",time:"11:00 AM",dateKey:"2026-05-13"},
+  {title:"Monthly HOPE Education PM Session",time:"3:00 PM",dateKey:"2026-05-13"},
+  {title:"Monthly HOPE Education AM Session",time:"9:00 AM",dateKey:"2026-06-10"},
+  {title:"Monthly HOPE Education PM Session",time:"3:00 PM",dateKey:"2026-06-10"},
+  {title:"Monthly HOPE Education AM Session",time:"9:00 AM",dateKey:"2026-07-08"},
+  {title:"Monthly HOPE Education AM Session",time:"9:00 AM",dateKey:"2026-08-12"},
+  {title:"Monthly HOPE Education AM Session",time:"9:00 AM",dateKey:"2026-09-09"},
+  {title:"Monthly HOPE Education AM Session",time:"9:00 AM",dateKey:"2026-10-14"}
+];
+var WORKCAL=[
+  {title:"SRMC PRC Meeting",time:"12:00 PM",dateKey:"2026-05-14"},
+  {title:"2026 NMLC",time:"",dateKey:"2026-05-18"},
+  {title:"2026 NMLC",time:"",dateKey:"2026-05-19"},
+  {title:"2026 NMLC",time:"",dateKey:"2026-05-20"},
+  {title:"2026 NMLC",time:"",dateKey:"2026-05-21"},
+  {title:"NE Physicians Advisory Board",time:"10:00 AM",dateKey:"2026-05-19"},
+  {title:"Mandatory Sterling",time:"8:30 AM",dateKey:"2026-05-20"},
+  {title:"Sterling Regional Quarterly Slide Prep",time:"9:00 AM",dateKey:"2026-05-28"},
+  {title:"[EXTERNAL] MEC",time:"12:00 PM",dateKey:"2026-05-29"}
+];
+
+var cur=new Date();cur.setHours(0,0,0,0);
+var D={},saveT=null,pollT=null,_todayFileId=null;
+
+function dk(d){var y=d.getFullYear(),m=String(d.getMonth()+1).padStart(2,'0'),day=String(d.getDate()).padStart(2,'0');return y+'-'+m+'-'+day;}
+function pad(n){return String(n).padStart(2,'0');}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function ntime(t){if(!t)return'99:99';var m=t.match(/(\d+):(\d+)\s*(am|pm)/i);if(!m)return t;var h=parseInt(m[1]),mn=parseInt(m[2]),pm=m[3].toLowerCase()==='pm';if(pm&&h!==12)h+=12;if(!pm&&h===12)h=0;return pad(h)+':'+pad(mn);}
+function gt(type){try{return JSON.parse(D['tasks_'+type]||'[]');}catch(e){return[];}}
+function userTyping(){var a=document.activeElement;return a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA');}
+
+// ── OAuth (redirect flow) ─────────────────────────────────────────────────
+function gdHasToken(){return gdToken&&Date.now()<gdTokenExp-30000;}
+
+function gdCheckHash(){
+  // Called on page load — picks up access_token from redirect return
+  var hash=window.location.hash.slice(1);
+  if(!hash)return false;
+  var params={};
+  hash.split('&').forEach(function(p){var i=p.indexOf('=');if(i>0)params[decodeURIComponent(p.slice(0,i))]=decodeURIComponent(p.slice(i+1));});
+  if(!params.access_token)return false;
+  gdToken=params.access_token;
+  gdTokenExp=Date.now()+(parseInt(params.expires_in)||3600)*1000;
+  localStorage.setItem('gd_token',gdToken);
+  localStorage.setItem('gd_token_exp',String(gdTokenExp));
+  history.replaceState(null,'',window.location.pathname);
+  document.getElementById('loginBtn').style.display='none';
+  return true;
+}
+
+function gdLoadSession(){
+  var t=localStorage.getItem('gd_token');
+  var exp=parseInt(localStorage.getItem('gd_token_exp')||'0');
+  if(t&&Date.now()<exp-30000){gdToken=t;gdTokenExp=exp;document.getElementById('loginBtn').style.display='none';return true;}
+  return false;
+}
+
+function gdSignIn(){
+  var redirectUri='https://npasteur-bit.github.io/Daily-Planner/';
+  window.location.href='https://accounts.google.com/o/oauth2/v2/auth'+
+    '?client_id='+encodeURIComponent(CLIENT_ID)+
+    '&redirect_uri='+encodeURIComponent(redirectUri)+
+    '&response_type=token'+
+    '&scope='+encodeURIComponent('https://www.googleapis.com/auth/drive')+
+    '&include_granted_scopes=true';
+}
+
+function gdGetToken(){
+  if(gdHasToken())return Promise.resolve(gdToken);
+  return Promise.reject(new Error('no_token'));
+}
+
+
+// ── Drive API helpers ─────────────────────────────────────────────────────
+async function gdSearch(date){
+  var tok;try{tok=await gdGetToken();}catch(e){return null;}
+  var q="name='planner-"+date+".json' and trashed=false";
+  try{
+    var r=await fetch(DRIVE_API+'?q='+encodeURIComponent(q)+'&orderBy=modifiedTime+desc&fields=files(id)&pageSize=5',
+      {headers:{Authorization:'Bearer '+tok}});
+    if(r.status===401){gdToken=null;return null;}
+    if(!r.ok)return null;
+    var j=await r.json();
+    return(j.files&&j.files.length)?j.files[0].id:null;
+  }catch(e){return null;}
+}
+
+async function gdRead(fileId){
+  var tok;try{tok=await gdGetToken();}catch(e){return null;}
+  try{
+    var r=await fetch(DRIVE_API+'/'+fileId+'?alt=media',{headers:{Authorization:'Bearer '+tok}});
+    if(r.status===401){gdToken=null;return null;}
+    if(!r.ok)return null;
+    return await r.json();
+  }catch(e){return null;}
+}
+
+async function gdWrite(date,data,existingId){
+  var tok;try{tok=await gdGetToken();}catch(e){return null;}
+  var meta=JSON.stringify({name:'planner-'+date+'.json',mimeType:'application/json'});
+  var body=JSON.stringify(data);
+  var bd='gdrivebnd123';
+  var payload='--'+bd+'\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n'+meta+
+    '\r\n--'+bd+'\r\nContent-Type: application/json\r\n\r\n'+body+'\r\n--'+bd+'--';
+  var url=existingId?(UPLOAD_API+'/'+existingId+'?uploadType=multipart'):(UPLOAD_API+'?uploadType=multipart');
+  try{
+    var r=await fetch(url,{method:existingId?'PATCH':'POST',
+      headers:{Authorization:'Bearer '+tok,'Content-Type':'multipart/related; boundary='+bd},body:payload});
+    if(r.status===401){gdToken=null;return null;}
+    if(r.ok){var j=await r.json();return j.id;}
+  }catch(e){}
+  return null;
+}
+
+async function gdSaveToday(){
+  if(!gdHasToken())return;
+  var dateStr=dk(cur);
+  var data={
+    tasks_work:D.tasks_work||'[]',
+    tasks_personal:D.tasks_personal||'[]',
+    tasks_house:D.tasks_house||'[]',
+    notes:D.notes||'',
+    gcal_events:D.gcal_events||'[]',
+    updated_at:new Date().toISOString(),
+    updated_by:'mobile'
+  };
+  // Always create a new file so the desktop artifact gets a fresh file ID (bypasses Cowork read cache)
+  var newId=await gdWrite(dateStr,data,null);
+  if(newId)_todayFileId=newId;
+}
+
+// ── Sync / load ───────────────────────────────────────────────────────────
+function switchTab(t){
+  document.querySelectorAll('.tab-panel').forEach(function(e){e.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(e){e.classList.remove('active');});
+  var p=document.getElementById('tab-'+t),b=document.getElementById('tabBtn-'+t);
+  if(p)p.classList.add('active');if(b)b.classList.add('active');
+}
+function changeDate(d){cur=new Date(cur);cur.setDate(cur.getDate()+d);cur.setHours(0,0,0,0);_todayFileId=null;init();}
+function goToday(){cur=new Date();cur.setHours(0,0,0,0);_todayFileId=null;init();}
+function manualSync(){load();}
+
+function renderDateLabel(){
+  var today=new Date();today.setHours(0,0,0,0);
+  var diff=Math.round((cur-today)/(864e5));
+  var sub=diff===0?'Today':diff===1?'Tomorrow':diff===-1?'Yesterday':'';
+  var lbl=cur.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  if(sub)lbl+=' - '+sub;
+  document.getElementById('dateLabel').textContent=lbl;
+}
+function connStatus(ok){
+  document.getElementById('connDot').className='conn-dot '+(ok?'online':'offline');
+  document.getElementById('syncLabel').textContent=ok?'Synced':'Offline';
+}
+
+async function load(){
+  try{
+    var dateStr=dk(cur);
+    var today=new Date();today.setHours(0,0,0,0);
+    var isToday=(cur.getTime()===today.getTime());
+    if(!gdHasToken()){if(!userTyping())renderAll();connStatus(false);return;}
+    var fileId=await gdSearch(dateStr);
+    if(isToday)_todayFileId=fileId;
+    if(!fileId){await carry();return;}
+    var data=await gdRead(fileId);
+    if(!data){await carry();return;}
+    D={};
+    ['work','personal','house'].forEach(function(type){D['tasks_'+type]=data['tasks_'+type]||'[]';});
+    D.notes=data.notes||'';
+    D.gcal_events=data.gcal_events||'[]';
+    var has=['work','personal','house'].some(function(t){return(D['tasks_'+t]||'[]')!=='[]';});
+    if(!has){await carry();return;}
+    mergeYesterday();
+    if(!userTyping())renderAll();
+    connStatus(true);
+  }catch(e){connStatus(false);if(!userTyping())renderAll();}
+}
+
+function startPoll(){if(pollT)clearInterval(pollT);load();pollT=setInterval(load,30000);}
+
+async function carry(){
+  var today=new Date();today.setHours(0,0,0,0);
+  if(cur.getTime()===today.getTime()){localStorage.setItem('gd_carry_'+dk(cur),'1');}
+  var prev=new Date(cur);prev.setDate(prev.getDate()-1);
+  try{
+    var prevId=await gdSearch(dk(prev));
+    if(prevId){
+      var pf=await gdRead(prevId);
+      if(pf){
+        var upd=false;
+        ['work','personal','house'].forEach(function(type){
+          var tasks;try{tasks=JSON.parse(pf['tasks_'+type]||'[]');}catch(e){tasks=[];}
+          var unc=tasks.filter(function(t){return!t.done;}).map(function(t){return Object.assign({},t,{subtasks:(t.subtasks||[]).filter(function(s){return!s.done;})});});
+          if(unc.length){D['tasks_'+type]=JSON.stringify(unc);upd=true;}
+        });
+        if(upd){await gdSaveToday();}
+      }
+    }
+  }catch(e){}
+  connStatus(true);if(!userTyping())renderAll();
+}
+
+function mergeYesterday(){
+  var today=new Date();today.setHours(0,0,0,0);
+  if(cur.getTime()!==today.getTime())return;
+  var flagKey='gd_carry_'+dk(cur);
+  if(localStorage.getItem(flagKey))return;
+  localStorage.setItem(flagKey,'1');
+  var prev=new Date(cur);prev.setDate(prev.getDate()-1);
+  gdSearch(dk(prev)).then(function(prevId){
+    if(!prevId)return Promise.resolve(null);
+    return gdRead(prevId);
+  }).then(function(pf){
+    if(!pf)return;
+    var upd=false;
+    ['work','personal','house'].forEach(function(type){
+      var yTasks;try{yTasks=JSON.parse(pf['tasks_'+type]||'[]');}catch(e){yTasks=[];}
+      var unc=yTasks.filter(function(t){return!t.done;}).map(function(t){return Object.assign({},t,{subtasks:(t.subtasks||[]).filter(function(s){return!s.done;})});});
+      if(!unc.length)return;
+      var todayTasks=gt(type);
+      var existing=new Set(todayTasks.map(function(t){return t.text.trim().toLowerCase();}));
+      var toAdd=unc.filter(function(t){return!existing.has(t.text.trim().toLowerCase());});
+      if(!toAdd.length)return;
+      D['tasks_'+type]=JSON.stringify(todayTasks.concat(toAdd));
+      upd=true;
+    });
+    if(upd){gdSaveToday();if(!userTyping())renderAll();}
+  }).catch(function(){});
+}
+
+// ── Render ────────────────────────────────────────────────────────────────
+function renderAll(){
+  renderEvents();
+  ['work','personal','house'].forEach(function(t){renderTasks(t);});
+  renderPrio();
+  var na=document.getElementById('notesArea');if(na)na.value=D.notes||'';
+}
+function renderEvents(){
+  var el=document.getElementById('eventList');if(!el)return;
+  var d=dk(cur),combined=[];
+  try{JSON.parse(D.gcal_events||'[]').forEach(function(e){combined.push(e);});}catch(e){}
+  BANNER.filter(function(e){return e.dateKey===d;}).forEach(function(e){combined.push({_t:e.title,_time:e.time||'All day',_c:'#00796b',_cal:'Banner Health'});});
+  WORKCAL.filter(function(e){return e.dateKey===d;}).forEach(function(e){combined.push({_t:e.title,_time:e.time||'All day',_c:'#1565c0',_cal:'Work Cal'});});
+  combined.sort(function(a,b){var at=a._time?ntime(a._time):(a.startTime||''),bt=b._time?ntime(b._time):(b.startTime||'');return at.localeCompare(bt);});
+  if(!combined.length){el.innerHTML='<div class="no-events">No events today</div>';return;}
+  el.innerHTML=combined.map(function(ev){
+    var hasT=ev._t!==undefined,title=hasT?ev._t:(ev.summary||'(No title)'),time=hasT?ev._time:(ev.startTime||'All day'),color=hasT?ev._c:(ev.color||'#4285f4'),cal=hasT?ev._cal:(ev.calName||'');
+    return '<div class="event-item" style="border-left-color:'+color+'"><div class="event-time">'+esc(time)+'</div><div class="event-body"><div class="event-title">'+esc(title)+'</div>'+(cal?'<div class="event-sub">'+esc(cal)+'</div>':'')+'</div></div>';
+  }).join('');
+}
+function renderTasks(type){
+  var tasks=gt(type),el=document.getElementById(type+'List');if(!el)return;
+  el.innerHTML=tasks.map(function(t,i){
+    var subs=t.subtasks||[];
+    var subHtml=subs.map(function(s,j){return'<div class="subtask-item '+(s.done?'done':'')+'"><div class="sub-check '+(s.done?'checked':'')+'" onclick="togSub(\''+type+'\','+i+','+j+')"></div><span class="task-label" style="font-size:13px">'+esc(s.text)+'</span><button class="task-del" onclick="delSub(\''+type+'\','+i+','+j+')">&#215;</button></div>';}).join('');
+    return '<div class="task-item '+(t.done?'done':'')+'"><div class="task-check '+(t.done?'checked':'')+'" onclick="togTask(\''+type+'\','+i+')"></div><span class="task-label">'+esc(t.text)+'</span><button class="btn-star '+(t.starred?'starred':'')+'" onclick="togStar(\''+type+'\','+i+')">&#9733;</button><button class="add-sub-btn" onclick="showSub(\''+type+'\','+i+')">&#8853;</button><button class="task-del" onclick="delTask(\''+type+'\','+i+')">&#215;</button></div>'+(subs.length?'<div class="subtask-list">'+subHtml+'</div>':'')+'<div class="subtask-add-row" id="sa_'+type+'_'+i+'" style="display:none"><input type="text" placeholder="Add subtask..." onkeydown="subKey(event,\''+type+'\','+i+',this)" onblur="subBlur(\''+type+'\','+i+',this)"><button class="sub-add-btn" onmousedown="event.preventDefault()" onclick="commitSub(\''+type+'\','+i+',this.previousElementSibling)">+</button></div>';
+  }).join('');
+}
+function renderPrio(){
+  var el=document.getElementById('priorityList'),card=document.getElementById('priorityCard');if(!el)return;
+  var starred=[];
+  ['work','personal','house'].forEach(function(type){gt(type).forEach(function(t,i){if(t.starred)starred.push({type:type,i:i,task:t});});});
+  if(!starred.length){el.innerHTML='<div class="prio-empty">Star any task &#9733; to pin it here</div>';if(card)card.style.display='none';return;}
+  if(card)card.style.display='';
+  el.innerHTML=starred.map(function(s){return'<div class="prio-item '+(s.task.done?'done':'')+'"><div class="task-check '+(s.task.done?'checked':'')+'" onclick="togTask(\''+s.type+'\','+s.i+')"></div><span class="task-label">'+esc(s.task.text)+'</span><span class="prio-badge '+s.type+'">'+s.type+'</span><button class="btn-star starred" onclick="togStar(\''+s.type+'\','+s.i+')">&#9733;</button></div>';}).join('');
+}
+
+// ── Task actions ──────────────────────────────────────────────────────────
+function saveField(field,value){D[field]=value;clearTimeout(saveT);saveT=setTimeout(gdSaveToday,800);}
+function debSave(field,value){saveField(field,value);}
+
+function addTask(type){var inp=document.getElementById(type+'In');var text=inp.value.trim();if(!text)return;var tasks=gt(type);tasks.push({text:text,done:false,subtasks:[]});D['tasks_'+type]=JSON.stringify(tasks);saveField('tasks_'+type,D['tasks_'+type]);renderTasks(type);inp.value='';inp.focus();}
+function togTask(type,i){var tasks=gt(type);tasks[i].done=!tasks[i].done;D['tasks_'+type]=JSON.stringify(tasks);saveField('tasks_'+type,D['tasks_'+type]);renderTasks(type);renderPrio();}
+function delTask(type,i){var tasks=gt(type);tasks.splice(i,1);D['tasks_'+type]=JSON.stringify(tasks);saveField('tasks_'+type,D['tasks_'+type]);renderTasks(type);renderPrio();}
+function togStar(type,i){var tasks=gt(type);tasks[i].starred=!tasks[i].starred;D['tasks_'+type]=JSON.stringify(tasks);saveField('tasks_'+type,D['tasks_'+type]);renderTasks(type);renderPrio();}
+function showSub(type,i){var el=document.getElementById('sa_'+type+'_'+i);if(el){el.style.display='flex';el.querySelector('input').focus();}}
+function subKey(e,type,i,inp){if(e.key==='Enter'){e.preventDefault();commitSub(type,i,inp);}if(e.key==='Escape'){inp.value='';var el=document.getElementById('sa_'+type+'_'+i);if(el)el.style.display='none';}}
+function subBlur(type,i,inp){setTimeout(function(){if(inp.value.trim())commitSub(type,i,inp);else{var el=document.getElementById('sa_'+type+'_'+i);if(el)el.style.display='none';}},150);}
+function commitSub(type,i,inp){var text=inp.value.trim();if(!text)return;inp.value='';var tasks=gt(type);if(!tasks[i])return;if(!tasks[i].subtasks)tasks[i].subtasks=[];tasks[i].subtasks.push({text:text,done:false});D['tasks_'+type]=JSON.stringify(tasks);saveField('tasks_'+type,D['tasks_'+type]);renderTasks(type);}
+function togSub(type,i,j){var tasks=gt(type);tasks[i].subtasks[j].done=!tasks[i].subtasks[j].done;D['tasks_'+type]=JSON.stringify(tasks);saveField('tasks_'+type,D['tasks_'+type]);renderTasks(type);}
+function delSub(type,i,j){var tasks=gt(type);tasks[i].subtasks.splice(j,1);D['tasks_'+type]=JSON.stringify(tasks);saveField('tasks_'+type,D['tasks_'+type]);renderTasks(type);}
+function saveNotes(){var n=document.getElementById('notesArea').value;D.notes=n;debSave('notes',n);}
+
+function init(){
+  D={};_todayFileId=null;
+  renderDateLabel();renderAll();connStatus(false);
+  if(gdCheckHash()){
+    // Returned from OAuth redirect — migrate then start polling
+    startPoll();
+  } else if(gdLoadSession()){
+    startPoll();
+  } else {
+    // No token — show sign-in button, render empty
+  }
+}
+init();
+</script>
+</body>
+</html>
